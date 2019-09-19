@@ -1,14 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import {MatCardModule, MatTabsModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
