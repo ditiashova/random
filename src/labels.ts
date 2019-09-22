@@ -1,7 +1,8 @@
 export const LABELS = {
   TABS: {
     TEMPLATE_DRIVEN_FROM: 'Template driven form',
-    LIFECYCLE_HOOKS: 'Lifecycle Hooks'
+    LIFECYCLE_HOOKS: 'Lifecycle Hooks',
+    REACTIVE_FORMS: 'Reactive forms'
   },
   INPUTS: {
     NAME: 'Name',
