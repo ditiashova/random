@@ -7,6 +7,6 @@ import {LABELS} from '../labels';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'random';
-  tabs = LABELS.TABS;
+  public title = 'random';
+  public tabs = LABELS.TABS;
 }

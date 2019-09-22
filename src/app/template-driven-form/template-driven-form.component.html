@@ -3,9 +3,74 @@
   <mat-card-subtitle>{{description}}</mat-card-subtitle>
 </mat-card-header>
 <mat-card-content>
-  <p>
-    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-    bred for hunting.
-  </p>
+  <form #userForm="ngForm"
+        (ngSubmit)="onSubmit(); userForm.reset();"
+        *ngIf="user">
+    <div class="form-group">
+      <label for="{{inputLabels.NAME}}">
+        {{inputLabels.NAME}}
+      </label>
+      <input [(ngModel)]="user.name"
+             #name="ngModel"
+             id="{{inputLabels.NAME}}"
+             class="form-control border"
+             [ngClass]="name.valid ? 'border-primary' : 'border-danger'"
+             placeholder="User's {{inputLabels.NAME}}"
+             type="text" name="{{inputLabels.NAME}}" required>
+      <small [hidden]="name.valid || name.pristine"
+           class="form-text text-danger">
+        {{inputLabels.REQUIRED_ERROR}}
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="{{inputLabels.AGE}}">
+        {{inputLabels.AGE}}
+      </label>
+      <input [(ngModel)]="user.age"
+             #age="ngModel"
+             id="{{inputLabels.AGE}}"
+             class="form-control border"
+             [ngClass]="age.valid ? 'border-primary' : 'border-danger'"
+             placeholder="User's {{inputLabels.AGE}}"
+             type="number" name="{{inputLabels.AGE}}"
+             min="0" max="120" required>
+      <small [hidden]="age.valid || age.pristine"
+           class="form-text text-danger">
+        {{inputLabels.REQUIRED_ERROR}}
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="{{inputLabels.FAVORITE_FOOD}}">
+        {{inputLabels.FAVORITE_FOOD}}
+      </label>
+      <select [(ngModel)]="user.favoriteFood"
+              #favoriteFood="ngModel"
+              id="{{inputLabels.FAVORITE_FOOD}}"
+              class="form-control border"
+              [ngClass]="favoriteFood.valid ? 'border-primary' : 'border-danger'"
+              name ="{{inputLabels.FAVORITE_FOOD}}" required>
+        <option *ngFor="let item of food"
+                [value]="item">
+          {{item}}
+        </option>
+      </select>
+    </div>
+
+    <button (click)="onSubmit(); userForm.reset();"
+            type="submit" class="btn btn-success"
+            [disabled]="!userForm.form.valid">
+      {{buttonLabels.SUBMIT}}
+    </button>
+  </form>
+  <h4>
+    User model:
+  </h4>
+  <pre>
+    {{user | json}}
+  </pre>
+  <h4>
+    The form is {{submitted ? 'already' : 'not yet'}} submitted.
+  </h4>
 </mat-card-content>

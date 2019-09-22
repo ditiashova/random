@@ -4,6 +4,10 @@
       <app-template-driven-form [title]="tabs.TEMPLATE_DRIVEN_FROM"></app-template-driven-form>
     </mat-card>
   </mat-tab>
-  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Second">
+    <mat-card style="max-width: 400px;">
+      <app-lifecycle-hooks [title]="tabs.LIFECYCLE_HOOKS"></app-lifecycle-hooks>
+    </mat-card>
+  </mat-tab>
   <mat-tab label="Third"> Content 3 </mat-tab>
 </mat-tab-group>

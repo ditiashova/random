@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TemplateDrivenFormComponent } from './template-driven-form.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks.component';
 
-describe('TemplateDrivenFormComponent', () => {
-  let component: TemplateDrivenFormComponent;
-  let fixture: ComponentFixture<TemplateDrivenFormComponent>;
+describe('LifecycleHooksComponent', () => {
+  let component: LifecycleHooksComponent;
+  let fixture: ComponentFixture<LifecycleHooksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TemplateDrivenFormComponent ]
+      declarations: [ LifecycleHooksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TemplateDrivenFormComponent);
+    fixture = TestBed.createComponent(LifecycleHooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

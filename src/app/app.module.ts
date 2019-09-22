@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import {MatCardModule, MatTabsModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import {ApiService} from './services/api.service';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    LifecycleHooksComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,9 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     MatTabsModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
