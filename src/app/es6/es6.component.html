@@ -1,0 +1,11 @@
+<mat-card-header>
+  <mat-card-title>{{title}}</mat-card-title>
+  <mat-card-subtitle>{{description}}</mat-card-subtitle>
+</mat-card-header>
+<mat-card-content>
+  <h6>{{headerLabels.GENERATOR}}</h6>
+  {{generatorResult | json}}
+  <br/>
+  <button class="btn btn-success"
+          (click)="generate();">Generate!</button>
+</mat-card-content>
